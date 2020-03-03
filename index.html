@@ -5,29 +5,25 @@
   <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
 </head>
 <body style='margin: 0; overflow: hidden;'>
-
+<a-assets>
+    <!-- 画像をプリロード -->
+    <img id="wip" src="contents/wip_image.png">
+  </a-assets>
 <!-- シーンの追加とデバックUIを非表示 -->
 <a-scene embedded arjs="debugUIEnabled:false;">
-
-  <!-- ② hiroマーカーでのソース -->
-  <a-marker preset="hiro">
-    <a-sphere scale=".25 .25 .25" position="0 .5 0" color="#111">
-      <a-animation attribute="position" to="0 1 0" direction="alternate" dur="2000" repeat="indefinite">
-      </a-animation>
-    </a-sphere>
-  </a-marker>
-
-
+    
   <!-- ③ 作成したマーカーでのソース -->
-  <a-marker type='pattern' url='marker/pattern-sqare.patt'>
-    <a-sphere scale=".25 .25 .25" position="0 .5 0" color="#f00">
-      <a-animation attribute="position" to="0 1 0" direction="alternate" dur="2000" repeat="indefinite">
-      </a-animation>
-    </a-sphere>
-  </a-marker>
+    <a-marker type='pattern' url='marker/pattern-sqare.patt'>
+      <a-sphere scale=".25 .25 .25" position="0 .5 0" color="#f00">
+          <a-animation attribute="position" to="0 1 0" direction="alternate" dur="2000" repeat="indefinite">
+          </a-animation>
+      </a-sphere>
+      <a-image src="#kinga_sinnen" width="2" height="2" rotation="-90 0 0">
+      </a-image>
+    </a-marker>
 
 
-  <a-entity camera></a-entity>
+    <a-entity camera></a-entity>
 </a-scene>
 </body>
 </html>
